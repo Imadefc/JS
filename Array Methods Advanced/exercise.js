@@ -1,3 +1,4 @@
+/*
 function adultFilter(persons) {
   let arr=[];
   persons.forEach(element => {
@@ -6,6 +7,10 @@ function adultFilter(persons) {
     }
   });
   return arr;
+}
+*/
+function adultFilter(persons) {
+  return persons.filter(el => el.age>17);
 }
 
 const persons = [
