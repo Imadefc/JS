@@ -1,11 +1,7 @@
 function uncompletedNotes(notes) {
   let arr =[];
   notes.forEach(el => {
-    el.todos.forEach(es => {
-      if(es.done===false){
-        arr.push(es);
-      }
-    });
+    arr.push(el.todos.filter(ele=>ele.done===false));
     
   });
   return arr;
