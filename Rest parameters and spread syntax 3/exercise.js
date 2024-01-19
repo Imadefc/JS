@@ -1,11 +1,6 @@
-function sum(arr) {
-  let sum =0;
-  for (let i = 0; i < arr.length; i++) {
-    sum+=arr[i];
-    
-  }
-  return sum;
+function sum(num1, num2, num3) {
+  return num1 + num2 + num3;
 }
 
 const numbers = [1, 2, 3];
-console.log(sum(numbers));
+console.log(sum(...numbers));
