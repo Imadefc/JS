@@ -1,7 +1,14 @@
 function uncompletedNotes(notes) {
   let arr =[];
   notes.forEach(el => {
-    arr.push(el.todos.filter(ele=>ele.done===false));
+    if(el.todos.filter(ele=>ele.done===false)){
+      let aux=new Object();
+      aux.id=el.id;
+      aux.description=el.description;
+      aux.todos=el.todos.filter(ele=>ele.done===false).pop();
+      arr.push(aux);
+    }
+    ;
     
   });
   return arr;
