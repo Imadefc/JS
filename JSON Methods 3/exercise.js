@@ -9,9 +9,7 @@ const person1 = {
     street: 'Via Romano, 12'
   }
 };
+let arrReplacer=["id","age"];
 
-const person2 = {...JSON.parse(JSON.stringify(person1)) };
-person2.address.city = 'Milan';
-
-console.log(person1);
+const person2 = {...JSON.parse(JSON.stringify(person1, arrReplacer)) };
 console.log(person2);
