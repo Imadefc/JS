@@ -7,7 +7,8 @@ class Person {
     this.age = age;
   }
 
-  function fromJson(str) {
+  static fromJson(str) {
+    str =JSON.parse(str);
     let per = new Person(str["id"], str["firstName"], str["lastName"], str["age"]);
     return per;
   }
