@@ -20,4 +20,8 @@ function funcionDos(aux){
     })
 }
 
-funcionUno(isLogged).then((num)=>funcionDos(num)).then((res)=>console.log(res)).catch((err)=>console.log(err));
+funcionUno(isLogged)
+                    .then((num)=>funcionDos(num))
+                    .then((res)=>console.log(res))
+                    .catch((err)=>console.log(err))
+                    .finally(console.log("Terminado"));
