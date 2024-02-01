@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>Title</label>
+          <input type="text" id="todo-title" />
+        </div>
+        <div>
+          <label>Completed</label>
+          <input type="checkbox" id="todo-completed" />
+        </div>
+
+        <button style="width: 100px; height: 30px;" type="submit" id="submit-todo" onclick="postear()">Hecho</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+
+  function postear() {
+    let titleTodo=document.getElementById("todo-title");
+    let completedTodo=document.getElementById("todo-completed")
+    let obj ={
+      userId:10,
+      id:101,
+      title:titleTodo,
+      completed: completedTodo
+    }
+    fetch("https://jsonplaceholder.typicode.com/posts",{method:"POST"}).finally(console.log("Todo listo"))
+  }
+
+
+  
+</script>
