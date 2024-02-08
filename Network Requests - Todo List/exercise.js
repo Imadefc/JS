@@ -6,5 +6,4 @@ async function llamada(url){
     console.log(data);
     return data;
 }
-
 llamada(url);

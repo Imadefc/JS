@@ -11,7 +11,7 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button style="width: 100px; height: 30px;" type="submit" id="submit-todo" onclick="postear()">Hecho</button>
+        <button style="width: 100px; height: 30px;" type="submit" id="submit-todo" onclick="post(event)">Hecho</button>
       </form>
     </div>
   </body>
@@ -19,16 +19,18 @@
 
 <script>
 
-  function postear() {
-    let titleTodo=document.getElementById("todo-title");
-    let completedTodo=document.getElementById("todo-completed")
-    let obj ={
-      userId:10,
-      id:101,
-      title:titleTodo,
-      completed: completedTodo
-    }
-    fetch("https://jsonplaceholder.typicode.com/posts",{method:"POST"}).finally(console.log("Todo listo"))
+  async function post(event){
+    event.preventDefault();
+    const $titleHTML = document.getElementById("todo-title").value;
+    const $completedHTML = document.getElementById("todo-completed").checked;
+    const JsonObjeto = JSON.stringify({title:$titleHTML, completed:$completedHTML});
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JsonObjeto})
+    const result = await res.json();
+    
+    console.log(result);
+
   }
 
 

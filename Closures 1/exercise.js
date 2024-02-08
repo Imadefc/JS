@@ -6,5 +6,4 @@ function printName(){
     }
     return inner;
 }
-
 console.log(printName()());
