@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+    <script>
+      const url="https://jsonplaceholder.typicode.com/todos";
+      const $contenedorDiv = document.getElementById("container");
+      $contenedorDiv.append(document.createElement("ol"));
+      const $contenedorUl = document.querySelector("ol");
+      fetch(url).then((e)=>e.json()).then((res)=>{
+        for (let i = 0; i < res.length; i++) {
+          
+          const $ele = document.createElement("li");
+          $ele.innerText= res[i].title;
+          $contenedorUl.appendChild($ele);
+          
+        }
+      })
+    </script>
+  </body>
+</html>
+
+
