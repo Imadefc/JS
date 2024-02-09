@@ -4,5 +4,5 @@ const user1 = {
   age: 25,
 };
 
-console.log(user1.name+": "+localStorage.getItem(user1.name));
+console.log(user1.name+": "+localStorage.getItem(JSON.stringify(user.name)));
 
